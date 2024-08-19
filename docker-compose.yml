@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+    books-store:
+        image: postgres:16
+        container_name: books-store
+        environment:
+            POSTGRES_PASSWORD: b9701c6c-26ce-4a6b-bdd5-1ef3b0af6cc9
+        volumes:
+            - ./00_init.sql:/docker-entrypoint-initdb.d/00_init.sql
+        ports:
+            - "5432:5432"
+        networks:
+            - mi-red
+        restart: unless-stopped
+    mi-redis:
+        image: redis:latest
+        container_name: mi-redis
+        ports:
+            - "6379:6379"
+        networks:
+            - mi-red
+        restart: unless-stopped
+networks:
+    mi-red:
+        external: true
