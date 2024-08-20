@@ -41,5 +41,5 @@ CREATE INDEX idx_archive_parentHash ON archive("parentHash");
 CREATE INDEX idx_archive_name ON archive(name);
 CREATE INDEX idx_archive_id ON archive(id);
 CREATE INDEX idx_archive_scan_root_id ON archive(scan_root_id);
-CREATE INDEX idx_archive_localDetails_text ON archive USING gin((localDetails::text) gin_trgm_ops);
-CREATE INDEX idx_archive_webDetails_text ON archive USING gin((webDetails::text) gin_trgm_ops);
+CREATE INDEX idx_archive_localDetails_text ON archive USING gin(("localDetails"::text) gin_trgm_ops);
+CREATE INDEX idx_archive_webDetails_text ON archive USING gin(("webDetails"::text) gin_trgm_ops);
