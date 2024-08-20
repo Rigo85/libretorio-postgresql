@@ -20,7 +20,7 @@ CREATE TABLE scan_root (
 -- Crear la tabla archive
 CREATE TABLE archive (
     id SERIAL PRIMARY KEY,
-    name VARCHAR NOT NULL,
+    "name" VARCHAR NOT NULL,
     "parentPath" VARCHAR NOT NULL,
     "parentHash" VARCHAR NOT NULL,
     "localDetails" JSONB,
@@ -28,8 +28,8 @@ CREATE TABLE archive (
     "customDetails" BOOLEAN NOT NULL DEFAULT FALSE,
     "size" VARCHAR NOT NULL,
     "coverId" VARCHAR NOT NULL,
-    scan_root_id INTEGER REFERENCES scan_root(id)
-    fileKind file_kind NOT NULL
+    scan_root_id INTEGER REFERENCES scan_root(id),
+    "fileKind" file_kind NOT NULL
 );
 
 -- Crear la extensión pg_trgm y pgcrypto
