@@ -23,6 +23,7 @@ CREATE TABLE archive (
     "name" VARCHAR NOT NULL,
     "parentPath" VARCHAR NOT NULL,
     "parentHash" VARCHAR NOT NULL,
+    "fileHash" VARCHAR NOT NULL,
     "localDetails" JSONB,
     "webDetails" JSONB,
     "customDetails" BOOLEAN NOT NULL DEFAULT FALSE,
@@ -38,6 +39,7 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 -- Crear índices para la tabla archive
 CREATE INDEX idx_archive_parentHash ON archive("parentHash");
+CREATE INDEX idx_archive_fileHash ON archive("fileHash");
 CREATE INDEX idx_archive_name ON archive(name);
 CREATE INDEX idx_archive_id ON archive(id);
 CREATE INDEX idx_archive_scan_root_id ON archive(scan_root_id);
