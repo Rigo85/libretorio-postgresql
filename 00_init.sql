@@ -7,7 +7,7 @@ CREATE DATABASE "books-store";
 \c "books-store";
 
 -- Crear el Enum file_kind
-CREATE TYPE file_kind AS ENUM ('FILE', 'COMIC-MANGA', 'EPUB', 'NONE');
+CREATE TYPE file_kind AS ENUM ('FILE', 'COMIC-MANGA', 'EPUB', 'NONE', 'AUDIOBOOK');
 
 -- Crear la tabla scan_root
 CREATE TABLE scan_root (
