@@ -7,6 +7,7 @@ services:
             POSTGRES_PASSWORD: b9701c6c-26ce-4a6b-bdd5-1ef3b0af6cc9
         volumes:
             - ./00_init.sql:/docker-entrypoint-initdb.d/00_init.sql
+            - /home/rigo/pgdata:/var/lib/postgresql/data
         ports:
             - "5432:5432"
         networks:
