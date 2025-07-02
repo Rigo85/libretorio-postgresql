@@ -4,7 +4,7 @@ services:
         image: postgres:16
         container_name: books-store
         environment:
-            POSTGRES_PASSWORD: b9701c6c-26ce-4a6b-bdd5-1ef3b0af6cc9
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
         volumes:
             - ./00_init.sql:/docker-entrypoint-initdb.d/00_init.sql
             - /home/rigo/pgdata:/var/lib/postgresql/data
