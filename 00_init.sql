@@ -59,6 +59,7 @@ CREATE TABLE users (
     is_admin      BOOLEAN DEFAULT FALSE,
     prefs         JSONB  DEFAULT '{}'::jsonb,
     is_active      BOOLEAN DEFAULT TRUE,
+    session_id TEXT DEFAULT NULL,
     created_at    TIMESTAMPTZ DEFAULT now()
 );
 
